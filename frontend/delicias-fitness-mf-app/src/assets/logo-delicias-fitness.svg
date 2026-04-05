@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 100" width="320" height="100">
+
+  <!-- Ícone fundo verde -->
+  <rect x="0" y="10" width="80" height="80" rx="18" fill="#2E7D1E"/>
+
+  <!-- Garfo -->
+  <line x1="29" y1="26" x2="29" y2="62" stroke="white" stroke-width="3.5" stroke-linecap="round"/>
+  <line x1="23" y1="26" x2="23" y2="38" stroke="white" stroke-width="2.5" stroke-linecap="round"/>
+  <line x1="29" y1="26" x2="29" y2="38" stroke="white" stroke-width="2.5" stroke-linecap="round"/>
+  <line x1="35" y1="26" x2="35" y2="38" stroke="white" stroke-width="2.5" stroke-linecap="round"/>
+  <path d="M23 38 Q29 45 35 38" fill="none" stroke="white" stroke-width="2.5"/>
+
+  <!-- Colher -->
+  <ellipse cx="53" cy="36" rx="9" ry="13" fill="#FF6B1A"/>
+  <line x1="53" y1="49" x2="53" y2="62" stroke="#FF6B1A" stroke-width="3.5" stroke-linecap="round"/>
+
+  <!-- Sorriso -->
+  <path d="M18 70 Q40 84 62 70" fill="none" stroke="white" stroke-width="4.5" stroke-linecap="round"/>
+
+  <!-- Pontinhos verdes -->
+  <circle cx="18" cy="64" r="4" fill="#6DBE45"/>
+  <circle cx="62" cy="64" r="4" fill="#6DBE45"/>
+
+  <!-- Tipografia -->
+  <text x="96" y="48" font-family="Poppins, Arial, sans-serif" font-size="26" font-weight="500" fill="#1A1A1A" letter-spacing="-0.3">Delicias </text>
+  <text x="96" y="48" font-family="Poppins, Arial, sans-serif" font-size="26" font-weight="700" fill="#2E7D1E" letter-spacing="-0.3" dx="108">Fitness</text>
+  <text x="96" y="48" font-family="Poppins, Arial, sans-serif" font-size="26" font-weight="700" fill="#FF6B1A" letter-spacing="-0.3" dx="222">M.F</text>
+
+  <!-- Subtítulo -->
+  <text x="97" y="66" font-family="Poppins, Arial, sans-serif" font-size="10" font-weight="400" fill="#5A6A52" letter-spacing="1.2">COMIDA DE VERDADE, FEITA COM AMOR</text>
+
+</svg>

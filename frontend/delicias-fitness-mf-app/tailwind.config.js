@@ -9,7 +9,7 @@ export default {
     extend: {
       colors: {
         brand: {
-          orange:        "#FF6B1A",
+          orange:         "#FF6B1A",
           "green-light": "#6DBE45",
           "green-dark":  "#2E7D1E",
           "dark":        "#0A1A06",
@@ -56,6 +56,16 @@ export default {
         md: "calc(var(--radius) - 2px)",
         sm: "calc(var(--radius) - 4px)",
       },
+      keyframes: {
+        marquee: {
+          '0%': { transform: 'translateX(0%)' },
+          '100%': { transform: 'translateX(-50%)' },
+        },
+      },
+      animation: {
+        marquee: 'marquee 20s linear infinite',
+      },
+      // ----------------------------------------------
     },
   },
   plugins: [require("tailwindcss-animate")],
