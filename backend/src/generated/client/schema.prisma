@@ -1,0 +1,69 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+  output   = "../src/generated/client"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Admin {
+  id        Int      @id @default(autoincrement())
+  username  String   @unique
+  email     String   @unique
+  role      String   @default("ADMIN")
+  password  String
+  createdAt DateTime @default(now())
+}
+
+model Category {
+  id        Int       @id @default(autoincrement())
+  name      String    @unique
+  deletedAt DateTime?
+  foods     Food[]
+}
+
+model Food {
+  id          Int         @id @default(autoincrement())
+  name        String      @unique
+  price       Float // Preço de venda
+  costPrice   Float? // Preço de custo (para o CRM calcular lucro)
+  description String?
+  imageUrl    String?
+  deletedAt   DateTime?
+  category    Category    @relation(fields: [categoryId], references: [id])
+  categoryId  Int
+  orderItems  OrderItem[]
+  isActive    Boolean     @default(true) // Para "desativar" um prato sem deletar
+}
+
+model Order {
+  id           Int         @id @default(autoincrement())
+  customerName String
+  phone        String
+  address      String
+  note         String?
+  total        Float
+  status       String      @default("pending") // pending, prepared, delivered, canceled
+  deliveryDate DateTime
+  createdAt    DateTime    @default(now())
+  items        OrderItem[]
+}
+
+model OrderItem {
+  id              Int   @id @default(autoincrement())
+  order           Order @relation(fields: [orderId], references: [id])
+  orderId         Int
+  food            Food  @relation(fields: [foodId], references: [id])
+  foodId          Int
+  quantity        Int
+  priceAtPurchase Float // O preço da marmita no momento da venda
+  subtotal        Float
+}
