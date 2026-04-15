@@ -19,7 +19,10 @@ export const Hero = () => {
         </p>
         
         <div className="flex gap-3">
-          <button className="bg-[#2E7D1E] text-white px-5 py-3 rounded-full text-sm font-bold shadow-lg active:scale-95 transition-all">
+          <button onClick={() => document.getElementById("menu")?.scrollIntoView({
+            behavior: 'smooth'
+          })}
+          className="bg-[#2E7D1E] text-white px-5 py-3 rounded-full text-sm font-bold shadow-lg active:scale-95 transition-all">
             Ver Cardápio
           </button>
           <button className="bg-white/10 border border-white/30 text-white px-5 py-3 rounded-full text-sm font-bold active:scale-95 transition-all">

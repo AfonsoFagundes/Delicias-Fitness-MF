@@ -3,13 +3,13 @@ import { CartBar } from "../components/CartBar";
 import { getCategories } from "../Api/CategoryApi";
 import ProductCard from "../components/ProductCard";
 
-import logoImg from "../assets/favicon-delicias-fitness.svg" // Verifique se o nome e pasta estão certos aqui
+import logoImg from "../assets/favicon-delicias-fitness.svg"; // Verifique se o nome e pasta estão certos aqui
 
 // Importando os componentes separados
 import { Hero } from "../components/Hero";
 import { Marquee } from "../components/Marquee";
-import { ComboSection } from "../components/ComboSection";
 import { FaqSection } from "../components/FaqSection";
+import HowItWorks from "@/components/HowItWorks";
 
 interface Food {
   id: number;
@@ -45,23 +45,24 @@ function Home() {
   return (
     <div className="bg-[#f9f9f9] min-h-screen font-sans pb-20">
       {/* 1. NAVBAR */}
-     {/* 1. NAVBAR */}
+      {/* 1. NAVBAR */}
       <nav className="bg-[#2E7D1E] p-4 sticky top-0 z-50 flex justify-between items-center shadow-md">
         <div className="flex items-center gap-2">
           {/* Usamos a variável logoImg aqui */}
-          <img 
-            src={logoImg} 
-            alt="Logo Delicias Fitness" 
-            className="h-10 w-auto object-contain" 
+          <img
+            src={logoImg}
+            alt="Logo Delicias Fitness"
+            className="h-10 w-auto object-contain"
           />
         </div>
         <CartBar />
       </nav>
       <Hero />
       <Marquee />
-      <ComboSection />
+      <HowItWorks/>
+      
 
-      <section className="px-5 py-8">
+      <section id="menu" className="px-5 py-8">
         <h2 className="text-xl font-bold mb-6 text-gray-900">Nosso Cardápio</h2>
 
         <div className="flex gap-2 overflow-x-auto pb-6 scrollbar-hide">
@@ -149,6 +150,7 @@ function Home() {
 
       {/* 7. FOOTER */}
       <footer className="py-12 px-5 text-center bg-white border-t border-gray-100">
+        
         <p className="font-bold text-gray-900 text-lg">
           🥗 Delicias Fitness M.F
         </p>

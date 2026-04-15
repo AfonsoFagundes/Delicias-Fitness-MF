@@ -41,6 +41,7 @@ export const CartBar = () => {
         const url = `https://wa.me/554891696167?text=${encodeURIComponent(mensagem)}`;
         toast.success("Pedido enviado com sucesso!");
         clearCart();
+        removeFromCart(1); 
         setIsOpen(false);
         window.open(url, "_blank");
       }
@@ -103,6 +104,7 @@ export const CartBar = () => {
                   <div className="flex gap-3">
                     <span className="font-bold text-[#2E7D1E]">{item.quantity}x</span>
                     <span className="text-sm font-medium text-gray-700">{item.name}</span>
+                    <button className="text-red-500 text-sm hover:underline" onClick={() => removeFromCart(item.id) }>Remover</button>
                   </div>
                   <span className="text-sm font-bold text-gray-900">R$ {(item.price * item.quantity).toFixed(2)}</span>
                 </div>
@@ -158,6 +160,8 @@ export const CartBar = () => {
                   onChange={(e) => setNote(e.target.value)}
                 />
               </div>
+
+              <button className="w-full bg-gray-100 text-gray-600 py-2 rounded-lg mt-4 font-medium" onClick={() => clearCart()}>Limpar Carrinho</button>
 
               <button
                 disabled={!name || !address || cart.length === 0 || loading}

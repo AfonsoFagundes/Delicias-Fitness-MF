@@ -11,14 +11,12 @@ interface Props {
 const ProductCard = ({ id, name, price }: Props) => {
   const { cart, addToCart, removeFromCart } = useCart();
 
-  // Encontra se o item já está no carrinho para mostrar a quantidade
   const cartItem = cart.find((item) => item.id === id);
   const quantity = cartItem ? cartItem.quantity : 0;
 
   return (
     <div className="flex items-center justify-between mt-auto pt-2">
       {quantity === 0 ? (
-        /* BOTÃO INICIAL: Quando não tem nada no carrinho */
         <button
           onClick={() => addToCart({ id, name, price })}
           className="w-full bg-[#2E7D1E] hover:bg-[#3a9a25] text-white text-[12px] font-bold py-2.5 px-4 rounded-xl transition-all active:scale-95 flex items-center justify-center gap-2"
@@ -26,7 +24,6 @@ const ProductCard = ({ id, name, price }: Props) => {
           <span>+</span> Adicionar
         </button>
       ) : (
-        /* SELETOR DE QUANTIDADE: Quando já tem 1 ou mais */
         <div className="flex items-center justify-between w-full bg-gray-100 rounded-xl p-1 border border-gray-200">
           <button
             onClick={() => removeFromCart(id)}
@@ -54,6 +51,6 @@ const ProductCard = ({ id, name, price }: Props) => {
       )}
     </div>
   );
-};
+}
 
 export default ProductCard;
