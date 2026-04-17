@@ -3,13 +3,14 @@ import { CartBar } from "../components/CartBar";
 import { getCategories } from "../Api/CategoryApi";
 import ProductCard from "../components/ProductCard";
 
-import logoImg from "../assets/favicon-delicias-fitness.svg"; // Verifique se o nome e pasta estão certos aqui
-
+import Logo from "@/components/Logo";
 // Importando os componentes separados
 import { Hero } from "../components/Hero";
 import { Marquee } from "../components/Marquee";
 import { FaqSection } from "../components/FaqSection";
 import HowItWorks from "@/components/HowItWorks";
+import Footer from "@/components/Footer";
+import AboutSection from "@/components/AboutSection";
 
 interface Food {
   id: number;
@@ -49,11 +50,7 @@ function Home() {
       <nav className="bg-[#2E7D1E] p-4 sticky top-0 z-50 flex justify-between items-center shadow-md">
         <div className="flex items-center gap-2">
           {/* Usamos a variável logoImg aqui */}
-          <img
-            src={logoImg}
-            alt="Logo Delicias Fitness"
-            className="h-10 w-auto object-contain"
-          />
+         <Logo className="w-64 h-auto" />   
         </div>
         <CartBar />
       </nav>
@@ -147,17 +144,11 @@ function Home() {
 
       {/* 6. FAQ */}
       <FaqSection />
+      {/* AbouT US*/}
+      <AboutSection/>
 
       {/* 7. FOOTER */}
-      <footer className="py-12 px-5 text-center bg-white border-t border-gray-100">
-        
-        <p className="font-bold text-gray-900 text-lg">
-          🥗 Delicias Fitness M.F
-        </p>
-        <div className="mt-6 text-[10px] text-gray-300 uppercase tracking-widest">
-          © 2026 - Feito com ❤️
-        </div>
-      </footer>
+      <Footer/>
     </div>
   );
 }
